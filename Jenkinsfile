@@ -41,15 +41,17 @@ pipeline
                     }
                     steps {
 						echo "Started on Agent1"
+						bat 'notepad.exe'
                         bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\IDE\\Extensions\\TestPlatform\\vstest.console.exe" C:\\Users\\Achyut\\source\\repos\\MVCUnitTestingDemo\\MVCUnitTestingDemo.Tests\\bin\\Debug\\MVCUnitTestingDemo.Tests.dll'
                     }
 				}	
 				stage('Test On Agent2') {
                     agent {
-                        label "Agent1"
+                        label "Windows7"
                     }
                     steps {
-						echo "Started on Agent1"
+						echo "Started on Agent2"
+						bat 'notepad.exe'
                         bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\IDE\\Extensions\\TestPlatform\\vstest.console.exe" C:\\Users\\Achyut\\source\\repos\\MVCUnitTestingDemo\\MVCUnitTestingDemo.Tests\\bin\\Debug\\MVCUnitTestingDemo.Tests.dll'
                     }
 				}
