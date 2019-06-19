@@ -31,26 +31,140 @@ namespace MVCUnitTestingDemo.Tests.Controllers
             // Assert
             Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(result);
         }
-
         [TestMethod]
-        public void test()
+        public void Employees1()
         {
-            IWebDriver driver;
-            driver = new ChromeDriver("D:\\WebDrivers");
-            ChromeOptions options = new ChromeOptions();
-            options.AddArguments("headless");
-            // Must maximize Chrome by `start-maximized`
-            options.AddArguments("start-maximized");
-            driver.Url = "http://localhost/mvCApp";
-            //driver.Manage().Window.Maximize();
-            IWebElement element = driver.FindElement(By.XPath("//a[contains(text(),'Employees List')]")); element.Click();
+            // Arrange
+            EmployeeController controller = new EmployeeController();
 
-            IWebElement link = driver.FindElement(By.XPath("//a[contains(text(),'Create New')]"));
-            link.Click();
+            // Act
+            ViewResult result = controller.Index() as ViewResult;
 
-            driver.Navigate().Back();
-            element = driver.FindElement(By.XPath("//a[@class='navbar-brand']")); element.Click();
-            driver.Close();
-        }               
+            // Assert
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(result);
+        }
+        [TestMethod]
+        public void Employees2()
+        {
+            // Arrange
+            EmployeeController controller = new EmployeeController();
+
+            // Act
+            ViewResult result = controller.Index() as ViewResult;
+
+            // Assert
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(result);
+        }
+        [TestMethod]
+        public void Employees3()
+        {
+            // Arrange
+            EmployeeController controller = new EmployeeController();
+
+            // Act
+            ViewResult result = controller.Index() as ViewResult;
+
+            // Assert
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(result);
+        }
+        [TestMethod]
+        public void Employees4()
+        {
+            // Arrange
+            EmployeeController controller = new EmployeeController();
+
+            // Act
+            ViewResult result = controller.Index() as ViewResult;
+
+            // Assert
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(result);
+        }
+        [TestMethod]
+        public void Employees5()
+        {
+            // Arrange
+            EmployeeController controller = new EmployeeController();
+
+            // Act
+            ViewResult result = controller.Index() as ViewResult;
+
+            // Assert
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(result);
+        }
+        [TestMethod]
+        public void Employees6()
+        {
+            // Arrange
+            EmployeeController controller = new EmployeeController();
+
+            // Act
+            ViewResult result = controller.Index() as ViewResult;
+
+            // Assert
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(result);
+        }
+        [TestMethod]
+        public void Employees7()
+        {
+            // Arrange
+            EmployeeController controller = new EmployeeController();
+
+            // Act
+            ViewResult result = controller.Index() as ViewResult;
+
+            // Assert
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(result);
+        }
+        [TestMethod]
+        public void Employees8()
+        {
+            // Arrange
+            EmployeeController controller = new EmployeeController();
+
+            // Act
+            ViewResult result = controller.Index() as ViewResult;
+
+            // Assert
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(result);
+        }
+        [TestMethod]
+        public void Employees9()
+        {
+            // Arrange
+            EmployeeController controller = new EmployeeController();
+
+            // Act
+            ViewResult result = controller.Index() as ViewResult;
+
+            // Assert
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(result);
+        }
+        [TestMethod]
+        public void Employees10()
+        {
+            // Arrange
+            EmployeeController controller = new EmployeeController();
+
+            // Act
+            ViewResult result = controller.Index() as ViewResult;
+
+            // Assert
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(result);
+        }
+        //[TestMethod]
+        //public void test()
+        //{
+        //    IWebDriver driver;
+        //    driver = new ChromeDriver("D:\\WebDrivers");
+        //    driver.Url = "http://localhost/mvCApp";
+        //    driver.Manage().Window.Maximize();
+        //    IWebElement element = driver.FindElement(By.XPath("//a[contains(text(),'Employees List')]")); element.Click();
+
+        //    IWebElement link = driver.FindElement(By.XPath("//a[contains(text(),'Create New')]"));
+        //    link.Click();
+
+        //    driver.Navigate().Back();
+        //    element = driver.FindElement(By.XPath("//a[@class='navbar-brand']")); element.Click();
+        //}               
     }
 }
