@@ -37,8 +37,12 @@ namespace MVCUnitTestingDemo.Tests.Controllers
         {
             IWebDriver driver;
             driver = new ChromeDriver("D:\\WebDrivers");
+            ChromeOptions options = new ChromeOptions();
+            options.AddArguments("headless");
+            // Must maximize Chrome by `start-maximized`
+            options.AddArguments("start-maximized");
             driver.Url = "http://localhost/mvCApp";
-            driver.Manage().Window.Maximize();
+            //driver.Manage().Window.Maximize();
             IWebElement element = driver.FindElement(By.XPath("//a[contains(text(),'Employees List')]")); element.Click();
 
             IWebElement link = driver.FindElement(By.XPath("//a[contains(text(),'Create New')]"));
@@ -46,6 +50,7 @@ namespace MVCUnitTestingDemo.Tests.Controllers
 
             driver.Navigate().Back();
             element = driver.FindElement(By.XPath("//a[@class='navbar-brand']")); element.Click();
+            driver.Close();
         }               
     }
 }
