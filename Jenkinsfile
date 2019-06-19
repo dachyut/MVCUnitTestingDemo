@@ -20,7 +20,7 @@ pipeline
 		{
 		    steps
 		    {
-		        bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe" d:\\JenkinsLearnSampleApp\\UnderstandingJenkins-TestingPurpose\\WebApplication\\WebApplication.sln /t:Clean;Build /p:Configuration=Release /p:TargetFramework=v4.6.1  /p:SkipPostSharp=True /p:RunCodeAnalysis=False /p:VisualStudioVersion=15.0'
+		        bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe" MVCUnitTestingDemo.sln /t:Clean;Build /p:Configuration=Release /p:TargetFramework=v4.6.1  /p:SkipPostSharp=True /p:RunCodeAnalysis=False /p:VisualStudioVersion=15.0'
 		    }
 		
 		}
@@ -28,7 +28,7 @@ pipeline
 		{
 		    steps
 		    {
-		        bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe" C:\\Users\\Achyut\\source\\repos\\MVCUnitTestingDemo\\MVCUnitTestingDemo\\MVCUnitTestingDemo.csproj /t:Build /p:DeployOnBuild=true /p:PublishProfile=CustomProfile /p:Configuration=Release /p:TargetFramework=v4.6.1 /p:VisualStudioVersion=15.0 /p:RestorePackages=false /p:SkipPostSharp=true'
+		        bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe" MVCUnitTestingDemo\\MVCUnitTestingDemo.csproj /t:Build /p:DeployOnBuild=true /p:PublishProfile=CustomProfile /p:Configuration=Release /p:TargetFramework=v4.6.1 /p:VisualStudioVersion=15.0 /p:RestorePackages=false /p:SkipPostSharp=true'
 		    }
 		
 		}
@@ -42,7 +42,7 @@ pipeline
                     steps {
 						echo "Started on Agent1"
 						bat 'notepad.exe'
-                        bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\IDE\\Extensions\\TestPlatform\\vstest.console.exe" C:\\Users\\Achyut\\source\\repos\\MVCUnitTestingDemo\\MVCUnitTestingDemo.Tests\\bin\\Debug\\MVCUnitTestingDemo.Tests.dll'
+                        bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\IDE\\Extensions\\TestPlatform\\vstest.console.exe" MVCUnitTestingDemo.Tests\\bin\\Debug\\MVCUnitTestingDemo.Tests.dll'
                     }
 				}	
 				stage('Test On Agent2') {
@@ -52,7 +52,7 @@ pipeline
                     steps {
 						echo "Started on Agent2"
 						bat 'notepad.exe'
-                        bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\IDE\\Extensions\\TestPlatform\\vstest.console.exe" C:\\Users\\Achyut\\source\\repos\\MVCUnitTestingDemo\\MVCUnitTestingDemo.Tests\\bin\\Debug\\MVCUnitTestingDemo.Tests.dll'
+                        bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\IDE\\Extensions\\TestPlatform\\vstest.console.exe" MVCUnitTestingDemo.Tests\\bin\\Debug\\MVCUnitTestingDemo.Tests.dll'
                     }
 				}
 			}
