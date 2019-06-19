@@ -34,11 +34,28 @@ pipeline
 		}
 		stage('test')
 		{
-		    steps
-		    {				
-		        bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\IDE\\Extensions\\TestPlatform\\vstest.console.exe" C:\\Users\\Achyut\\source\\repos\\MVCUnitTestingDemo\\MVCUnitTestingDemo.Tests\\bin\\Debug\\MVCUnitTestingDemo.Tests.dll'
-		    }
-		
+			parallel {
+				stage('Test On Agent1') {
+                    agent {
+                        label "Agent1"
+                    }
+                    steps {
+						echo "Started on Agent1"
+                        bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\IDE\\Extensions\\TestPlatform\\vstest.console.exe" C:\\Users\\Achyut\\source\\repos\\MVCUnitTestingDemo\\MVCUnitTestingDemo.Tests\\bin\\Debug\\MVCUnitTestingDemo.Tests.dll'
+                    }
+				}	
+				stage('Test On Agent2') {
+                    agent {
+                        label "Agent1"
+                    }
+                    steps {
+						echo "Started on Agent1"
+                        bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\IDE\\Extensions\\TestPlatform\\vstest.console.exe" C:\\Users\\Achyut\\source\\repos\\MVCUnitTestingDemo\\MVCUnitTestingDemo.Tests\\bin\\Debug\\MVCUnitTestingDemo.Tests.dll'
+                    }
+				}
+			}
+			
+		    
 		}
 	}
 }
