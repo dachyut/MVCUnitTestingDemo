@@ -16,6 +16,8 @@ pipeline
             }
 			steps {
 				git credentialsId: '493658b7-3e4d-43be-a778-00b274ee7651', url: 'https://github.com/dachyut/MVCUnitTestingDemo'
+				
+				git 'https://github.carboniteinc.com/adeshpande/SeleniumTestProj.git'
 
 			}
 		}
@@ -53,7 +55,9 @@ pipeline
                     }
                     steps {
 						echo "Started on Agent1"						
-                        bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\IDE\\Extensions\\TestPlatform\\vstest.console.exe" MVCUnitTestingDemo.Tests\\bin\\Debug\\MVCUnitTestingDemo.Tests.dll'
+                        //bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\IDE\\Extensions\\TestPlatform\\vstest.console.exe" MVCUnitTestingDemo.Tests\\bin\\Debug\\MVCUnitTestingDemo.Tests.dll'
+						
+						bat 'mvn clean verify -Dbrowser=chrome'
                     }
 				}	
 				stage('Test On Agent2') {

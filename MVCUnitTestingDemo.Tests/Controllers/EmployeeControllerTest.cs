@@ -151,20 +151,20 @@ namespace MVCUnitTestingDemo.Tests.Controllers
             // Assert
             Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(result);
         }
-        //[TestMethod]
-        //public void test()
-        //{
-        //    IWebDriver driver;
-        //    driver = new ChromeDriver("D:\\WebDrivers");
-        //    driver.Url = "http://localhost/mvCApp";
-        //    driver.Manage().Window.Maximize();
-        //    IWebElement element = driver.FindElement(By.XPath("//a[contains(text(),'Employees List')]")); element.Click();
+        [TestMethod]
+        public void test()
+        {
+            IWebDriver driver;
+            driver = new ChromeDriver("D:\\WebDrivers");
+            driver.Url = "http://localhost/mvCApp";
+            driver.Manage().Window.Maximize();
+            IWebElement element = driver.FindElement(By.XPath("//a[contains(text(),'Employees List')]")); element.Click();
 
-        //    IWebElement link = driver.FindElement(By.XPath("//a[contains(text(),'Create New')]"));
-        //    link.Click();
+            IWebElement link = driver.FindElement(By.XPath("//a[contains(text(),'Create New')]"));
+            link.Click();
 
-        //    driver.Navigate().Back();
-        //    element = driver.FindElement(By.XPath("//a[@class='navbar-brand']")); element.Click();
-        //}               
+            driver.Navigate().Back();
+            element = driver.FindElement(By.XPath("//a[@class='navbar-brand']")); element.Click();
+        }
     }
 }
