@@ -15,10 +15,7 @@ pipeline
                 label "Agent1"
             }
 			steps {
-				git credentialsId: '493658b7-3e4d-43be-a778-00b274ee7651', url: 'https://github.com/dachyut/MVCUnitTestingDemo'
-				
-				git 'https://github.carboniteinc.com/adeshpande/SeleniumTestProj.git'
-
+				git credentialsId: '493658b7-3e4d-43be-a778-00b274ee7651', url: 'https://github.com/dachyut/MVCUnitTestingDemo'				
 			}
 		}
 		
